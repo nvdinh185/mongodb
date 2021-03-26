@@ -4,10 +4,10 @@ var url = "mongodb://localhost:27017/";
 MongoClient.connect(url, function (err, db) {
   if (err) throw err;
   var dbo = db.db("mydb");
-  var myobj = { username: "nvdinh123", password: "123" };
-  dbo.collection("customers").insertOne(myobj, function (err, res) {
+  var query = { address: "Park Lane 38" };
+  dbo.collection("customers").find(query).toArray(function (err, result) {
     if (err) throw err;
-    console.log("1 document inserted");
+    console.log(result);
     db.close();
   });
 });
