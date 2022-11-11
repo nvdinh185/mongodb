@@ -23,7 +23,7 @@ MongoClient.connect(url, async function (err, db) {
   }
 
   customers.findOne(
-    { id: "5" },
+    { id: 5 },
     // { username: 'nvdinh456' },
     function (err, result) {
       if (err) { console.log(err) }
